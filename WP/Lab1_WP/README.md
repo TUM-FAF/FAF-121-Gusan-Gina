@@ -40,6 +40,10 @@ Objectives With Points:
 
 •Write your own PSG. (1 pt)
 
+Creation steps of the app:
+--------------------------
+
+
 Features:
 ---------
 My application consists of two Edit boxes: one for input text and another for output text.The Input Box has customized text color. The Output Box has customized font size.
