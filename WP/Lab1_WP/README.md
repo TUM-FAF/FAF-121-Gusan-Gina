@@ -1,5 +1,45 @@
 Laboratory Work Nr.1
 ====================
+Title
+-----
+Window. Window handling. Basic window’s form elements.
+Introduction
+------------
+Main purposes of this lab work:
+
+•understand Event-Driven Programming.
+
+•study Win32 API.
+
+
+Secondary purposes of this lab work:
+
+•use a Version Control Systems (GIT).
+
+•write code according to a Programming Style Guide.
+
+Mandatory Objectives:
+--------------------
+•Create a Windows application
+
+•Choose Programming Style Guidelines that you'll follow
+
+•Add 2 buttons to window: one with default styles, one with custom styles (size, background, text color, font family, font size)
+
+•Add 2 text inputs to window: one with default styles, one with custom styles (size, background, text color, font family, font size)
+
+•Add 2 text elements to window: one with default styles, one with custom styles (size, background, text color, font family, font size)
+
+Objectives With Points:
+----------------------
+•Make elements to fit window on resize. (1 pt)
+
+•Make elements to interact or change other elements. (2 pt)
+
+•Change behavior of different window actions (at least 3). (1 pt)
+
+•Write your own PSG. (1 pt)
+
 Features:
 ---------
 My application consists of two Edit boxes: one for input text and another for output text.The Input Box has customized text color. The Output Box has customized font size.
