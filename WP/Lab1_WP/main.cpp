@@ -37,10 +37,8 @@ int WINAPI WinMain(HINSTANCE hInst,HINSTANCE hPrevInst,LPSTR lpCmdLine,int nShow
 			"Window Class",
 			"Laboratory Work Nr.1",
 			WS_OVERLAPPEDWINDOW,
-			300,
-			100,
-			400,
-			450,
+			300,100,
+			400,450,
 			NULL,
 			NULL,
 			hProgramInstance,
@@ -78,7 +76,6 @@ LRESULT CALLBACK WinProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
     PAINTSTRUCT ps;
     HGDIOBJ hfDefault,hfButtons,hfSButton;
 
-
 	switch(msg)
 	{
 		case WM_CREATE:
@@ -92,7 +89,6 @@ LRESULT CALLBACK WinProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
             GetClientRect(hWnd, &rct);
             iClientW = rct.right - rct.left;
             iClientH = rct.bottom - rct.top;
-
 
 			hwndInputText=CreateWindowEx(
                 (DWORD)NULL,
@@ -112,7 +108,6 @@ LRESULT CALLBACK WinProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
             SendMessage(hwndInputText,WM_SETFONT,(WPARAM)hfDefault,MAKELPARAM(FALSE,0));
             SendMessage(hwndInputText,WM_SETTEXT,NULL,(LPARAM)"Insert text here...");
 
-
             hwndOutputText=CreateWindowEx(
                 (DWORD)NULL,
 				TEXT("EDIT"),
@@ -126,7 +121,6 @@ LRESULT CALLBACK WinProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 				(HMENU)IDC_OUTPUT_EDIT,
 				hProgramInstance,
 				NULL);
-
 
 			hwndDefaultButton=CreateWindowEx(
                 (DWORD)NULL,
@@ -157,7 +151,6 @@ LRESULT CALLBACK WinProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 
             SendMessage(hwndComicButton,WM_SETFONT,(WPARAM)hfButtons,MAKELPARAM(FALSE,0));
 
-
             hwndChaparralButton=CreateWindowEx(
                 (DWORD)NULL,
                 TEXT("button"),
@@ -171,7 +164,6 @@ LRESULT CALLBACK WinProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
                 NULL);
 
             SendMessage(hwndChaparralButton,WM_SETFONT,(WPARAM)hfButtons,MAKELPARAM(FALSE,0));
-
 
             hwndSpecialButton=CreateWindowEx(
                 (DWORD)NULL,
@@ -208,6 +200,33 @@ LRESULT CALLBACK WinProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
             break;
 
 
+        case WM_SYSCOMMAND:
+            switch(wParam) {
+
+                case SC_MINIMIZE:
+                    return MessageBox(NULL, TEXT("To minimize,type 'MINIMIZE' in Input Box!"), TEXT(""), MB_OK | MB_ICONWARNING);
+
+                case SC_MAXIMIZE:
+                    return MessageBox(NULL, TEXT("To maximize,type 'MAXIMIZE' in Input Box!"), TEXT(""), MB_OK | MB_ICONERROR);
+
+                case SC_CLOSE:
+                    iScreenW = GetSystemMetrics(SM_CXSCREEN);
+                    iScreenH = GetSystemMetrics(SM_CYSCREEN);
+
+                    GetWindowRect(hWnd, &rct);
+                    SetWindowPos(hWnd, 0,
+                        (iScreenW - rct.right) / 10 * (rand() % 11),
+                        (iScreenH - rct.bottom) / 10 * (rand() % 11),
+                        0, 0,SWP_NOZORDER|SWP_NOSIZE);
+
+                    return MessageBox(NULL, TEXT("To exit,type 'CLOSE' in Input Box"), TEXT(""), MB_OK | MB_ICONASTERISK);
+
+                default:
+                    return DefWindowProc(hWnd, msg, wParam, lParam);
+            }
+                break;
+
+
         case WM_CTLCOLOREDIT:
 
             hdc = (HDC)wParam;
@@ -216,30 +235,31 @@ LRESULT CALLBACK WinProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 
 
         case WM_SIZE:
+
             GetClientRect(hWnd, &rct);
             iClientW = rct.right - rct.left;
             iClientH = rct.bottom - rct.top;
 
             MoveWindow(hwndInputText,
-                iClientW * 1/10,
-                iClientH * 15/100,
-                iClientW * 8/10,
-                iClientH * 15/100,
-                TRUE);
+                        iClientW * 1/10,
+                        iClientH * 15/100,
+                        iClientW * 8/10,
+                        iClientH * 15/100,
+                        TRUE);
 
             MoveWindow(hwndOutputText,
-                iClientW * 1/10,
-                iClientH * 45/100,
-                iClientW * 8/10,
-                iClientH * 20/100,
-                TRUE);
+                        iClientW * 1/10,
+                        iClientH * 45/100,
+                        iClientW * 8/10,
+                        iClientH * 20/100,
+                        TRUE);
 
             MoveWindow(hwndDefaultButton,
-                iClientW * 6/100,
-                iClientH * 70/100,
-                iClientW * 25/100,
-                iClientH * 8/100,
-                TRUE);
+                        iClientW * 6/100,
+                        iClientH * 70/100,
+                        iClientW * 25/100,
+                        iClientH * 8/100,
+                        TRUE);
 
             MoveWindow(hwndComicButton,
                        iClientW * 38/100,
@@ -262,6 +282,7 @@ LRESULT CALLBACK WinProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
                        iClientH * 10/100,
                        TRUE);
 
+
         case WM_GETMINMAXINFO:
 
                 LPMINMAXINFO pMMInfo;
@@ -278,6 +299,7 @@ LRESULT CALLBACK WinProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
                 minSize.y = rct.bottom - rct.top;
 
                 pMMInfo->ptMinTrackSize = minSize;
+
 
 		case WM_COMMAND:
 
