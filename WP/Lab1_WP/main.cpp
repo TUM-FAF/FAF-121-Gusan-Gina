@@ -14,7 +14,7 @@ HINSTANCE hProgramInstance;
 
 int WINAPI WinMain(HINSTANCE hInst,HINSTANCE hPrevInst,LPSTR lpCmdLine,int nShowCmd)
 {
-    MSG msg;
+	MSG msg;
 	WNDCLASSEX wClass;
 
 	wClass.cbClsExtra=0;
@@ -44,56 +44,56 @@ int WINAPI WinMain(HINSTANCE hInst,HINSTANCE hPrevInst,LPSTR lpCmdLine,int nShow
 			hProgramInstance,
 			0);
 
-    ShowWindow(hWnd,nShowCmd);
+	ShowWindow(hWnd,nShowCmd);
 
 
 	while(GetMessage(&msg,NULL,0,0))
-    {
+	{
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
-    }
+	}
 
 	return 0;
 }
 
 LRESULT CALLBACK WinProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 {   const char * maxim = "MAXIMIZE";
-    const char * restore = "RESTORE";
-    const char * minim = "MINIMIZE";
-    const char * close = "CLOSE";
-    char szInputName[10], szOutputName[11];
-    static int cxChar, cyChar;
-    static HWND hwndInputText,hwndOutputText;
-    static HWND hwndDefaultButton,hwndComicButton;
-    static HWND hwndChaparralButton,hwndSpecialButton;
-    int iScreenW,iScreenH;
-    int iClientW,iClientH;
-    int iTextLength;
-    char * szText;
-    HDC hdc;
-    HFONT hfFont;
-    RECT rct;
-    PAINTSTRUCT ps;
-    HGDIOBJ hfDefault,hfButtons,hfSButton;
+	const char * restore = "RESTORE";
+	const char * minim = "MINIMIZE";
+	const char * close = "CLOSE";
+	char szInputName[10], szOutputName[11];
+	static int cxChar, cyChar;
+	static HWND hwndInputText,hwndOutputText;
+	static HWND hwndDefaultButton,hwndComicButton;
+	static HWND hwndChaparralButton,hwndSpecialButton;
+	int iScreenW,iScreenH;
+	int iClientW,iClientH;
+	int iTextLength;
+	char * szText;
+	HDC hdc;
+	HFONT hfFont;
+	RECT rct;
+	PAINTSTRUCT ps;
+	HGDIOBJ hfDefault,hfButtons,hfSButton;
 
 	switch(msg)
 	{
 		case WM_CREATE:
 
-		    cxChar = LOWORD (GetDialogBaseUnits ());
-            cyChar = HIWORD (GetDialogBaseUnits ());
+			cxChar = LOWORD (GetDialogBaseUnits ());
+			cyChar = HIWORD (GetDialogBaseUnits ());
 
-            iScreenW = GetSystemMetrics(SM_CXSCREEN);
-            iScreenH = GetSystemMetrics(SM_CYSCREEN);
+			iScreenW = GetSystemMetrics(SM_CXSCREEN);
+			iScreenH = GetSystemMetrics(SM_CYSCREEN);
 
-            GetClientRect(hWnd, &rct);
-            iClientW = rct.right - rct.left;
-            iClientH = rct.bottom - rct.top;
+			GetClientRect(hWnd, &rct);
+			iClientW = rct.right - rct.left;
+			iClientH = rct.bottom - rct.top;
 
 			hwndInputText=CreateWindowEx(
-                (DWORD)NULL,
+				(DWORD)NULL,
 				TEXT("EDIT"),
-                TEXT(""),
+				TEXT(""),
 				WS_CHILD | WS_VISIBLE | WS_BORDER | ES_MULTILINE,
 				iClientW * 10/100,
 				iClientH * 15/100,
@@ -105,271 +105,271 @@ LRESULT CALLBACK WinProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 				NULL);
 
 			hfDefault = CreateFont(14,0,0,0,0,0,0,0,0,0,0,0,0,TEXT("Consolas"));
-            SendMessage(hwndInputText,WM_SETFONT,(WPARAM)hfDefault,MAKELPARAM(FALSE,0));
-            SendMessage(hwndInputText,WM_SETTEXT,NULL,(LPARAM)"Insert text here...");
+			SendMessage(hwndInputText,WM_SETFONT,(WPARAM)hfDefault,MAKELPARAM(FALSE,0));
+			SendMessage(hwndInputText,WM_SETTEXT,NULL,(LPARAM)"Insert text here...");
 
-            hwndOutputText=CreateWindowEx(
-                (DWORD)NULL,
+			hwndOutputText=CreateWindowEx(
+				(DWORD)NULL,
 				TEXT("EDIT"),
 				TEXT(""),
 				WS_CHILD | WS_VISIBLE | WS_BORDER | WS_VSCROLL | ES_READONLY | ES_MULTILINE,
 				iClientW * 10/100,
-                iClientH * 45/100,
-                iClientW * 80/100,
-                iClientH *60/100,
+				iClientH * 45/100,
+				iClientW * 80/100,
+				iClientH *60/100,
 				hWnd,
 				(HMENU)IDC_OUTPUT_EDIT,
 				hProgramInstance,
 				NULL);
 
 			hwndDefaultButton=CreateWindowEx(
-                (DWORD)NULL,
-                TEXT("button"),
-                TEXT("Default"),
-                WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
-                50, 300,
-                60, 20,
-                hWnd,
-                (HMENU)IDC_FONT1_BUTTON,
-                hProgramInstance,
-                NULL);
+				(DWORD)NULL,
+				TEXT("button"),
+				TEXT("Default"),
+				WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
+				50, 300,
+				60, 20,
+				hWnd,
+				(HMENU)IDC_FONT1_BUTTON,
+				hProgramInstance,
+				NULL);
 
-            hfButtons = CreateFont(16,0,0,0,0,0,0,0,0,0,0,0,0,TEXT("CASTELLAR"));
-            SendMessage(hwndDefaultButton,WM_SETFONT,(WPARAM)hfButtons,MAKELPARAM(FALSE,0));
+			hfButtons = CreateFont(16,0,0,0,0,0,0,0,0,0,0,0,0,TEXT("CASTELLAR"));
+			SendMessage(hwndDefaultButton,WM_SETFONT,(WPARAM)hfButtons,MAKELPARAM(FALSE,0));
 
-            hwndComicButton=CreateWindowEx(
-                (DWORD)NULL,
-                TEXT("button"),
-                TEXT("Comic"),
-                WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
-                150, 300,
-                60, 20,
-                hWnd,
-                (HMENU)IDC_FONT2_BUTTON,
-                hProgramInstance,
-                NULL);
+			hwndComicButton=CreateWindowEx(
+				(DWORD)NULL,
+				TEXT("button"),
+				TEXT("Comic"),
+				WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
+				150, 300,
+				60, 20,
+				hWnd,
+				(HMENU)IDC_FONT2_BUTTON,
+				hProgramInstance,
+				NULL);
 
-            SendMessage(hwndComicButton,WM_SETFONT,(WPARAM)hfButtons,MAKELPARAM(FALSE,0));
+			SendMessage(hwndComicButton,WM_SETFONT,(WPARAM)hfButtons,MAKELPARAM(FALSE,0));
 
-            hwndChaparralButton=CreateWindowEx(
-                (DWORD)NULL,
-                TEXT("button"),
-                TEXT("Chaparral"),
-                WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
-                250, 300,
-                70, 20,
-                hWnd,
-                (HMENU)IDC_FONT3_BUTTON,
-                hProgramInstance,
-                NULL);
+			hwndChaparralButton=CreateWindowEx(
+				(DWORD)NULL,
+				TEXT("button"),
+				TEXT("Chaparral"),
+				WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
+				250, 300,
+				70, 20,
+				hWnd,
+				(HMENU)IDC_FONT3_BUTTON,
+				hProgramInstance,
+				NULL);
 
-            SendMessage(hwndChaparralButton,WM_SETFONT,(WPARAM)hfButtons,MAKELPARAM(FALSE,0));
+			SendMessage(hwndChaparralButton,WM_SETFONT,(WPARAM)hfButtons,MAKELPARAM(FALSE,0));
 
-            hwndSpecialButton=CreateWindowEx(
-                (DWORD)NULL,
-                TEXT("button"),
-                TEXT("Special button"),
-                WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
-                125, 350,
-                110, 30,
-                hWnd,
-                (HMENU)IDC_SPB_BUTTON,
-                hProgramInstance,
-                NULL);
+			hwndSpecialButton=CreateWindowEx(
+				(DWORD)NULL,
+				TEXT("button"),
+				TEXT("Special button"),
+				WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
+				125, 350,
+				110, 30,
+				hWnd,
+				(HMENU)IDC_SPB_BUTTON,
+				hProgramInstance,
+				NULL);
 
-            hfSButton = CreateFont(18,0,0,0,0,0,0,0,0,0,0,0,0,TEXT("Broadway"));
-            SendMessage(hwndSpecialButton,WM_SETFONT,(WPARAM)hfSButton,MAKELPARAM(FALSE,0));
+			hfSButton = CreateFont(18,0,0,0,0,0,0,0,0,0,0,0,0,TEXT("Broadway"));
+			SendMessage(hwndSpecialButton,WM_SETFONT,(WPARAM)hfSButton,MAKELPARAM(FALSE,0));
 
-            break;
-
-
-        case WM_PAINT:
-
-            strcpy(szInputName, "Input Box");
-            strcpy(szOutputName, "Output Box");
-
-            GetClientRect(hWnd, &rct);
-            iClientW = rct.right - rct.left;
-            iClientH = rct.bottom - rct.top;
-
-            hdc = BeginPaint(hWnd, &ps);
-            SetTextColor(hdc, RGB(59,79,250));
-            TextOut (hdc, iClientW * 40/100, iClientH * 8/100, szInputName, 9);
-            TextOut (hdc, iClientW * 40/100, iClientH * 39/100, szOutputName, 10);
-            EndPaint(hWnd, &ps);
-            break;
+			break;
 
 
-        case WM_SYSCOMMAND:
-            switch(wParam) {
+		case WM_PAINT:
 
-                case SC_MINIMIZE:
-                    return MessageBox(NULL, TEXT("To minimize,type 'MINIMIZE' in Input Box!"), TEXT(""), MB_OK | MB_ICONWARNING);
+			strcpy(szInputName, "Input Box");
+			strcpy(szOutputName, "Output Box");
 
-                case SC_MAXIMIZE:
-                    return MessageBox(NULL, TEXT("To maximize,type 'MAXIMIZE' in Input Box!"), TEXT(""), MB_OK | MB_ICONERROR);
+			GetClientRect(hWnd, &rct);
+			iClientW = rct.right - rct.left;
+			iClientH = rct.bottom - rct.top;
 
-                case SC_CLOSE:
-                    iScreenW = GetSystemMetrics(SM_CXSCREEN);
-                    iScreenH = GetSystemMetrics(SM_CYSCREEN);
-
-                    GetWindowRect(hWnd, &rct);
-                    SetWindowPos(hWnd, 0,
-                        (iScreenW - rct.right) / 10 * (rand() % 11),
-                        (iScreenH - rct.bottom) / 10 * (rand() % 11),
-                        0, 0,SWP_NOZORDER|SWP_NOSIZE);
-
-                    return MessageBox(NULL, TEXT("To exit,type 'CLOSE' in Input Box"), TEXT(""), MB_OK | MB_ICONASTERISK);
-
-                default:
-                    return DefWindowProc(hWnd, msg, wParam, lParam);
-            }
-                break;
+			hdc = BeginPaint(hWnd, &ps);
+			SetTextColor(hdc, RGB(59,79,250));
+			TextOut (hdc, iClientW * 40/100, iClientH * 8/100, szInputName, 9);
+			TextOut (hdc, iClientW * 40/100, iClientH * 39/100, szOutputName, 10);
+			EndPaint(hWnd, &ps);
+			break;
 
 
-        case WM_CTLCOLOREDIT:
+		case WM_SYSCOMMAND:
+			switch(wParam) {
 
-            hdc = (HDC)wParam;
-            SetTextColor(hdc, RGB(200,40,40));
-            break;
+				case SC_MINIMIZE:
+					return MessageBox(NULL, TEXT("To minimize,type 'MINIMIZE' in Input Box!"), TEXT(""), MB_OK | MB_ICONWARNING);
 
+				case SC_MAXIMIZE:
+					return MessageBox(NULL, TEXT("To maximize,type 'MAXIMIZE' in Input Box!"), TEXT(""), MB_OK | MB_ICONERROR);
 
-        case WM_SIZE:
+				case SC_CLOSE:
+					iScreenW = GetSystemMetrics(SM_CXSCREEN);
+					iScreenH = GetSystemMetrics(SM_CYSCREEN);
 
-            GetClientRect(hWnd, &rct);
-            iClientW = rct.right - rct.left;
-            iClientH = rct.bottom - rct.top;
+					GetWindowRect(hWnd, &rct);
+					SetWindowPos(hWnd, 0,
+						(iScreenW - rct.right) / 10 * (rand() % 11),
+						(iScreenH - rct.bottom) / 10 * (rand() % 11),
+						0, 0,SWP_NOZORDER|SWP_NOSIZE);
 
-            MoveWindow(hwndInputText,
-                        iClientW * 1/10,
-                        iClientH * 15/100,
-                        iClientW * 8/10,
-                        iClientH * 15/100,
-                        TRUE);
+					return MessageBox(NULL, TEXT("To exit,type 'CLOSE' in Input Box"), TEXT(""), MB_OK | MB_ICONASTERISK);
 
-            MoveWindow(hwndOutputText,
-                        iClientW * 1/10,
-                        iClientH * 45/100,
-                        iClientW * 8/10,
-                        iClientH * 20/100,
-                        TRUE);
-
-            MoveWindow(hwndDefaultButton,
-                        iClientW * 6/100,
-                        iClientH * 70/100,
-                        iClientW * 25/100,
-                        iClientH * 8/100,
-                        TRUE);
-
-            MoveWindow(hwndComicButton,
-                       iClientW * 38/100,
-                       iClientH * 7/10,
-                       iClientW * 25/100,
-                       iClientH * 8/100,
-                       TRUE);
-
-            MoveWindow(hwndChaparralButton,
-                       iClientW * 7/10,
-                       iClientH * 7/10,
-                       iClientW * 25/100,
-                       iClientH * 8/100,
-                       TRUE);
-
-            MoveWindow(hwndSpecialButton,
-                       iClientW * 33/100,
-                       iClientH * 82/100,
-                       iClientW * 35/100,
-                       iClientH * 10/100,
-                       TRUE);
+				default:
+					return DefWindowProc(hWnd, msg, wParam, lParam);
+			}
+				break;
 
 
-        case WM_GETMINMAXINFO:
+		case WM_CTLCOLOREDIT:
 
-                LPMINMAXINFO pMMInfo;
-                POINT minSize;
-                pMMInfo = (LPMINMAXINFO)lParam;
-                rct.left = 0;
-                rct.top = 0;
-                rct.right = 400;
-                rct.bottom = 450;
+			hdc = (HDC)wParam;
+			SetTextColor(hdc, RGB(200,40,40));
+			break;
 
-                AdjustWindowRectEx(&rct, WS_OVERLAPPEDWINDOW, FALSE, WS_EX_OVERLAPPEDWINDOW);
 
-                minSize.x = rct.right - rct.left;
-                minSize.y = rct.bottom - rct.top;
+		case WM_SIZE:
 
-                pMMInfo->ptMinTrackSize = minSize;
+			GetClientRect(hWnd, &rct);
+			iClientW = rct.right - rct.left;
+			iClientH = rct.bottom - rct.top;
+
+			MoveWindow(hwndInputText,
+						iClientW * 1/10,
+						iClientH * 15/100,
+						iClientW * 8/10,
+						iClientH * 15/100,
+						TRUE);
+
+			MoveWindow(hwndOutputText,
+						iClientW * 1/10,
+						iClientH * 45/100,
+						iClientW * 8/10,
+						iClientH * 20/100,
+						TRUE);
+
+			MoveWindow(hwndDefaultButton,
+						iClientW * 6/100,
+						iClientH * 70/100,
+						iClientW * 25/100,
+						iClientH * 8/100,
+						TRUE);
+
+			MoveWindow(hwndComicButton,
+					   iClientW * 38/100,
+					   iClientH * 7/10,
+					   iClientW * 25/100,
+					   iClientH * 8/100,
+					   TRUE);
+
+			MoveWindow(hwndChaparralButton,
+					   iClientW * 7/10,
+					   iClientH * 7/10,
+					   iClientW * 25/100,
+					   iClientH * 8/100,
+					   TRUE);
+
+			MoveWindow(hwndSpecialButton,
+					   iClientW * 33/100,
+					   iClientH * 82/100,
+					   iClientW * 35/100,
+					   iClientH * 10/100,
+					   TRUE);
+
+
+		case WM_GETMINMAXINFO:
+
+				LPMINMAXINFO pMMInfo;
+				POINT minSize;
+				pMMInfo = (LPMINMAXINFO)lParam;
+				rct.left = 0;
+				rct.top = 0;
+				rct.right = 400;
+				rct.bottom = 450;
+
+				AdjustWindowRectEx(&rct, WS_OVERLAPPEDWINDOW, FALSE, WS_EX_OVERLAPPEDWINDOW);
+
+				minSize.x = rct.right - rct.left;
+				minSize.y = rct.bottom - rct.top;
+
+				pMMInfo->ptMinTrackSize = minSize;
 
 
 		case WM_COMMAND:
 
 			switch(LOWORD(wParam))
-            {
+			{
 				case IDC_FONT1_BUTTON:
 
-				    hfFont = CreateFont(20,0,0,0,0,0,0,0,0,0,0,0,20,TEXT("Consolas"));
-                    SendMessage(hwndOutputText, WM_SETFONT, (WPARAM)hfFont, 1);
+					hfFont = CreateFont(20,0,0,0,0,0,0,0,0,0,0,0,20,TEXT("Consolas"));
+					SendMessage(hwndOutputText, WM_SETFONT, (WPARAM)hfFont, 1);
 
 					iTextLength = SendMessage(hwndInputText, WM_GETTEXTLENGTH, 0, 0);
-                    szText = (char*)malloc(iTextLength+1);
-                    SendMessage(hwndInputText, WM_GETTEXT, iTextLength+1, (LPARAM)szText);
-                    SendMessage(hwndOutputText, WM_SETTEXT, 0, (LPARAM)szText);
-                    free(szText);
-                    break;
+					szText = (char*)malloc(iTextLength+1);
+					SendMessage(hwndInputText, WM_GETTEXT, iTextLength+1, (LPARAM)szText);
+					SendMessage(hwndOutputText, WM_SETTEXT, 0, (LPARAM)szText);
+					free(szText);
+					break;
 
-                case IDC_FONT2_BUTTON:
+				case IDC_FONT2_BUTTON:
 
-                    hfFont = CreateFont(0,0,0,0,0,0,0,0,0,0,0,0,0,TEXT("Comic Sans MS"));
-                    SendMessage(hwndOutputText, WM_SETFONT, (WPARAM)hfFont, 1);
+					hfFont = CreateFont(0,0,0,0,0,0,0,0,0,0,0,0,0,TEXT("Comic Sans MS"));
+					SendMessage(hwndOutputText, WM_SETFONT, (WPARAM)hfFont, 1);
 
-                    iTextLength = SendMessage(hwndInputText, WM_GETTEXTLENGTH, 0, 0);
-                    szText = (char*)malloc(iTextLength+1);
-                    SendMessage(hwndInputText, WM_GETTEXT, iTextLength+1, (LPARAM)szText);
-                    SendMessage(hwndOutputText, WM_SETTEXT, 0, (LPARAM)szText);
-                    free(szText);
-                    break;
+					iTextLength = SendMessage(hwndInputText, WM_GETTEXTLENGTH, 0, 0);
+					szText = (char*)malloc(iTextLength+1);
+					SendMessage(hwndInputText, WM_GETTEXT, iTextLength+1, (LPARAM)szText);
+					SendMessage(hwndOutputText, WM_SETTEXT, 0, (LPARAM)szText);
+					free(szText);
+					break;
 
-                case IDC_FONT3_BUTTON:
+				case IDC_FONT3_BUTTON:
 
-                    hfFont = CreateFont(0,0,0,0,0,0,0,0,0,0,0,0,0,TEXT("Chaparral Pro Light"));
-                    SendMessage(hwndOutputText, WM_SETFONT, (WPARAM)hfFont, 1);
+					hfFont = CreateFont(0,0,0,0,0,0,0,0,0,0,0,0,0,TEXT("Chaparral Pro Light"));
+					SendMessage(hwndOutputText, WM_SETFONT, (WPARAM)hfFont, 1);
 
-                    iTextLength = SendMessage(hwndInputText, WM_GETTEXTLENGTH, 0, 0);
-                    szText = (char*)malloc(iTextLength+1);
-                    SendMessage(hwndInputText, WM_GETTEXT, iTextLength+1, (LPARAM)szText);
-                    SendMessage(hwndOutputText, WM_SETTEXT, 0, (LPARAM)szText);
-                    free(szText);
-                    break;
+					iTextLength = SendMessage(hwndInputText, WM_GETTEXTLENGTH, 0, 0);
+					szText = (char*)malloc(iTextLength+1);
+					SendMessage(hwndInputText, WM_GETTEXT, iTextLength+1, (LPARAM)szText);
+					SendMessage(hwndOutputText, WM_SETTEXT, 0, (LPARAM)szText);
+					free(szText);
+					break;
 
-                case IDC_SPB_BUTTON:
+				case IDC_SPB_BUTTON:
 
-                    iTextLength = SendMessage(hwndInputText, WM_GETTEXTLENGTH, 0, 0);
-                    szText = (char*)malloc(iTextLength+1);
-                    SendMessage(hwndInputText, WM_GETTEXT, iTextLength+1, (LPARAM)szText);
+					iTextLength = SendMessage(hwndInputText, WM_GETTEXTLENGTH, 0, 0);
+					szText = (char*)malloc(iTextLength+1);
+					SendMessage(hwndInputText, WM_GETTEXT, iTextLength+1, (LPARAM)szText);
 
-                    if ( strcmp( maxim,szText ) == 0 )
-                    ShowWindow (hWnd, SW_MAXIMIZE);
+					if ( strcmp( maxim,szText ) == 0 )
+					ShowWindow (hWnd, SW_MAXIMIZE);
 
-                    if ( strcmp( restore,szText ) == 0 )
-                    ShowWindow (hWnd, SW_RESTORE);
+					if ( strcmp( restore,szText ) == 0 )
+					ShowWindow (hWnd, SW_RESTORE);
 
-                    if ( strcmp( minim,szText ) == 0 )
-                    ShowWindow (hWnd, SW_MINIMIZE);
+					if ( strcmp( minim,szText ) == 0 )
+					ShowWindow (hWnd, SW_MINIMIZE);
 
-                    if ( strcmp( close,szText ) == 0 )
-                    ShowWindow (hWnd, SW_HIDE);
-                    break;
+					if ( strcmp( close,szText ) == 0 )
+					ShowWindow (hWnd, SW_HIDE);
+					break;
 
 
-    default:return DefWindowProc(hWnd,msg,wParam,lParam);
-            }
-            break;
+	default:return DefWindowProc(hWnd,msg,wParam,lParam);
+			}
+			break;
 
-        case WM_DESTROY:
+		case WM_DESTROY:
 
 			PostQuitMessage(0);
-            break;
+			break;
 
-    default:return DefWindowProc(hWnd,msg,wParam,lParam);
+	default:return DefWindowProc(hWnd,msg,wParam,lParam);
 	}
 }
