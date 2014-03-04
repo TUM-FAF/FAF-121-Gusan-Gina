@@ -48,7 +48,7 @@ Analysing the structure of my program,it can be divided in two main parts:WinMai
 
 Bellow I'll present the screenshot of the application:
 
- ![The app](./images/app1.jpg)
+ ![The app](https://raw.github.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/images/app1.png)
 
 Features:
 ---------
