@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1394468106 source:d:\projects\windows programming\lab_2_wp\main.cpp
+	<windows.h>
+	"resource.h"
+
+1394467330 d:\projects\windows programming\lab_2_wp\resource.h
+
+1394391406 source:d:\projects\windows programming\lab_2_wp\resource.rc
+	"afxres.h"
+	"resource.h"
+
+1394565755 source:c:\users\gina\desktop\lab_2_wp\main.cpp
+	<windows.h>
+	"resource.h"
+
+1394467330 c:\users\gina\desktop\lab_2_wp\resource.h
+
+1394391406 source:c:\users\gina\desktop\lab_2_wp\resource.rc
+	"afxres.h"
+	"resource.h"
+
