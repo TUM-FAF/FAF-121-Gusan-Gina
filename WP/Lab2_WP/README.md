@@ -62,13 +62,13 @@ Features and functionality:
 
 8.	Four hotkeys for moving the window on the screen:
 
-•	Ctrl+F1- Move window right
-
-•	Ctrl+F2- Move window left
-
-•	Ctrl+F3- Move window down
-
-•	Ctrl+F4- Move window up;
+     •	Ctrl+F1- Move window right
+     
+     •	Ctrl+F2- Move window left
+     
+     •	Ctrl+F3- Move window down
+     
+     •	Ctrl+F4- Move window up;
 
 9.	A personalized icon for my application;
 
@@ -97,7 +97,7 @@ Here are some screenshots of the application:
 Conclusion:
 -----------
 
-Doing this laboratory work helped me discover some new features of Windows Programming and apply them into my own program. I’ve learned how to work with different types of dialog boxes and how to create an system menu. For the functionality of my dialog boxes I had to implement two more procedures, create resource files for them and also use the WM_COMMAND message to display them on the screen. . Creating the menu was done by using the CreateMenu() and CreatePopupMenu() functions. 
+Doing this laboratory work helped me discover some new features of Windows Programming and apply them into my own program. I’ve learned how to work with different types of dialog boxes and how to create an system menu. For the functionality of my dialog boxes I had to implement two more procedures, create resource files for them and also use the WM_COMMAND message to display them on the screen. Creating the menu was done by using the CreateMenu() and CreatePopupMenu() functions. 
 One of the most difficult things to do in this lab was to work with scroll bars. Because scroll bars don’t  send WM_COMMAND messages to the parent window, I had to create WM_VSCROLL and WM_HSCROLL messages, just like window scroll bars. When processing the scroll bar messages, I could differentiate between window scroll bars and scroll bar controls by the lParam parameter. It is  0 for window scroll bars and the scroll bar window handle for scroll bar controls. I set the range and position of my scroll bar controls with the same calls used for window scroll bars: SetScrollRange(), SetScrollInfo(), SetScrollPos().The only difference is that window scroll bars use a handle to the main window as the first parameter and SB_VERT or SB_HORZ as the second parameter.
 
 Also, I’ve added 4 custom events for 4 different keyboard combinations, using the GetKeyState function that determines if the Ctrl button is pressed. I used GetKeyState with the virtual key codes VK_CONTROL and  VK_F1, VK_F2, VK_F3, VK_F4 to move the window.
