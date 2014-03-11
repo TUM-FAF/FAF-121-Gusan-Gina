@@ -15,6 +15,9 @@
 # Executable files
 *.exe
 
+# Resource files
+*.res
+
 # Other files
 *.cbp
 *.layout

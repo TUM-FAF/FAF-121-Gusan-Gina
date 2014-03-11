@@ -1,84 +1,109 @@
-Laboratory Work Nr.1
+Laboratory Work Nr.2
 ====================
-Title
------
-Window. Window handling. Basic window’s form elements.
-Introduction
+Title:
+------
+Advanced Form Elements. Child Windowses. Basics of Working With Keyboard.
 ------------
-Main purposes of this lab work:
+Contents:
 
-•understand Event-Driven Programming.
+•	The Keyboard
 
-•study Win32 API.
+•	Child Window Controls
 
+•	Scroll Bar
 
-Secondary purposes of this lab work:
+•	Listbox
 
-•use a Version Control Systems (GIT).
+•	Menus and Other Resources
 
-•write code according to a Programming Style Guide.
+•	Dialog Boxes
 
-Mandatory Objectives:
+Completed mandatory Objectives:
 --------------------
-•Create a Windows application
+•Display a dialog box on some event (ex. on clicking some button)
 
-•Choose Programming Style Guidelines that you'll follow
+•Add a system menu to your application with at least 3 items (add actions to that items)
 
-•Add 2 buttons to window: one with default styles, one with custom styles (size, background, text color, font family, font size)
+•Add a scroll bar that will change any visible parameter of any other element (color of a text)
 
-•Add 2 text inputs to window: one with default styles, one with custom styles (size, background, text color, font family, font size)
-
-•Add 2 text elements to window: one with default styles, one with custom styles (size, background, text color, font family, font size)
+•Hook keyboard input. Add 2 custom events for 2 different keyboard combinations (ex. change window background on ctrl+space)
 
 Objectives With Points:
 ----------------------
-•Make elements to fit window on resize. (1 pt)
+•Add a listbox and attach some events when any element is accessed (clicked) (2 pt)
 
-•Make elements to interact or change other elements. (2 pt)
+•Add 2 scroll bars that will manage main window size or position (1 pt)
 
-•Change behavior of different window actions (at least 3). (1 pt)
-
-•Write your own PSG. (1 pt)
+•Customize your application by adding an icon and using different cursor in application (1 pt)
 
 Creation steps of the app:
 --------------------------
-As a beginner in Windows Programming, I found very useful Charles Petzold's book- *"Programming Windows"*.It helped me a lot to get started. Reading it,I figured out the main concepts of an Windows application. During the development of my own app, [http://msdn.microsoft.com](http://msdn.microsoft.com) was also of great usage.
+For this laboratory work, I found very useful Charles Petzold's book- *"Programming Windows"*, chapters 6, 9, 10 and 11 from the first section. Reading it helped me in understanding the main features for working with scroll bars, ListBoxes, menus and keyboard. Of course, the precious help of [http://msdn.microsoft.com](http://msdn.microsoft.com) was unreplaceble. Also, some dilemmas were solved by [http://stackoverflow.com](http://http://stackoverflow.com). 
 
-Analysing the structure of my program,it can be divided in two main parts:WinMain function,which represents the entry point in the program and WinProc, which is the function that processes all messages sent or posted to all windows of the class. So,in WinMain I've declared the main window,while in WinProc I've created a list of messages as WM_CREATE, WM_PAINT, WM_SYSCOMMAND,WM_SIZE and others.,that I used to generate buttons,edit boxes and dialog boxes. For the objects's interaction one with each other, I used various functions like SendMessage(),CreateFont(),GetClientRect() and others.
+For a better understanding of my app, bellow I'll present its mockup:
 
-Bellow I'll present the screenshot of the application:
+ ![mockup](https://raw.github.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/Lab2_WP/screenshots/mockup.png)
 
- ![The app](https://raw.github.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/images/app1.png)
+Features and functionality:
+---------------------------
+1.	An Edit Box for adding text;
 
-Features:
----------
-My application consists of two Edit boxes: one for input text and another for output text.The Input Box has customized text color. The Output Box has customized font size.
+2.	An List Box for output text- at double clicking an item, a message box is displayed.
 
-It also has four Buttons:three of them responsible for fonts and one of them for a special purpose.
-All the buttons have customized styles: text size, text font ,dimensions.
-Functionality:
---------------
-•	By clicking the Default Button, the text goes from Input Box to Output Box, having the default font.
+3.	Two scroll bars used to change the width and the height of the window;
 
-•	By clicking the second button, the text goes from Input Box to Output Box, having the ‘Comic Sans’ font.
+4.	One button to add an item to the ListBox;
 
-•	By clicking the third button, the text goes from Input Box to Output box, having the ‘Chaparral’ font.
+5.	One button to remove an item from the ListBox;
 
-•	If you press the minimize or maximize buttons, the window will not minimize nor maximize, instead an alerting message box will appear.
+6.	One button to clear all the items from the ListBox; 
 
-•	If you press the close button, the position of the  window will change and another message box will be displayed.
+7.	Three scroll bars located in the dialog box responsible for the background color;
 
-•	For minimizing the window, in Input box should be typed ‘MINIMIZE'.
+8.	Four hotkeys for moving the window on the screen:
 
-•	For maximizing the window, in Input box should be typed ‘MAXIMIZE'.
+     •	Ctrl+F1- Move window right
+     
+     •	Ctrl+F2- Move window left
+     
+     •	Ctrl+F3- Move window down
+     
+     •	Ctrl+F4- Move window up;
 
-•	For restoring the window after maximization, in Input box should be typed ‘RESTORE'.
+9.	A personalized icon for my application;
 
-•	For closing the window, in Input box should be typed ‘CLOSE'.
+10.	A personalized cursor for my application;
 
-•	The window has a minimal size and also allows resizing.
+11.	A system menu with 3 items: File, View, Help;
 
-•	All the objects from the window react at any dimension changes.
+Here are some screenshots of the application:
+
+![main](https://raw.github.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/Lab2_WP/screenshots/main.png)
+
+![about_dialogbox](https://raw.github.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/Lab2_WP/screenshots/about_dialogbox.png)
+
+![background_dialogbox](https://raw.github.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/Lab2_WP/screenshots/background_dialogbox.png)
+ 
+**Something about the MENU:** 
+
+• Two dialog boxes: one modal and one modeless;
+
+•	From the File menu, we can exit the program;
+
+•	From the Properties menu, we can open the dialog box consisting of the three scrollbars that manage the background color;
+
+•	From the Help menu, we can open the last dialog box that includes some information about the application.
+
+Conclusion:
+-----------
+
+Doing this laboratory work helped me discover some new features of Windows Programming and apply them into my own program. I’ve learned how to work with different types of dialog boxes and how to create an system menu. For the functionality of my dialog boxes I had to implement two more procedures, create resource files for them and also use the WM_COMMAND message to display them on the screen. Creating the menu was done by using the CreateMenu() and CreatePopupMenu() functions. 
+One of the most difficult things to do in this lab was to work with scroll bars. Because scroll bars don’t  send WM_COMMAND messages to the parent window, I had to create WM_VSCROLL and WM_HSCROLL messages, just like window scroll bars. When processing the scroll bar messages, I could differentiate between window scroll bars and scroll bar controls by the lParam parameter. It is  0 for window scroll bars and the scroll bar window handle for scroll bar controls. I set the range and position of my scroll bar controls with the same calls used for window scroll bars: SetScrollRange(), SetScrollInfo(), SetScrollPos().The only difference is that window scroll bars use a handle to the main window as the first parameter and SB_VERT or SB_HORZ as the second parameter.
+
+Also, I’ve added 4 custom events for 4 different keyboard combinations, using the GetKeyState function that determines if the Ctrl button is pressed. I used GetKeyState with the virtual key codes VK_CONTROL and  VK_F1, VK_F2, VK_F3, VK_F4 to move the window.
+
+
+
 
 
 
