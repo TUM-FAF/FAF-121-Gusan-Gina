@@ -1,6 +1,6 @@
 Laboratory Work Nr.2
 ====================
-Title
+Title:
 -----
 Advanced Form Elements. Child Windowses. Basics of Working With Keyboard.
 ------------
@@ -38,7 +38,7 @@ Objectives With Points:
 
 Creation steps of the app:
 --------------------------
-For this laboratory work, I found very useful Charles Petzold's book- *"Programming Windows"*,chapters 6, 9, 10 and 11 from the first section. Reading it helped me in understanding the main features for working with scroll bars, ListBoxes, menus and keyboard. Of course, the precious help of [http://msdn.microsoft.com](http://msdn.microsoft.com) was unreplaceble. Also, some dilemmas were solved by [http://stackoverflow.com](http://http://stackoverflow.com). 
+For this laboratory work, I found very useful Charles Petzold's book- *"Programming Windows"*, chapters 6, 9, 10 and 11 from the first section. Reading it helped me in understanding the main features for working with scroll bars, ListBoxes, menus and keyboard. Of course, the precious help of [http://msdn.microsoft.com](http://msdn.microsoft.com) was unreplaceble. Also, some dilemmas were solved by [http://stackoverflow.com](http://http://stackoverflow.com). 
 
 For a better understanding of my app, bellow I'll present its mockup:
 
