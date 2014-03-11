@@ -1,8 +1,6 @@
 Laboratory Work Nr.2
 ====================
-Title:
------
-Advanced Form Elements. Child Windowses. Basics of Working With Keyboard.
+Title: Advanced Form Elements. Child Windowses. Basics of Working With Keyboard.
 ------------
 Contents:
 
