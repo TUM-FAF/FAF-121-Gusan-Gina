@@ -1,44 +1,54 @@
-Laboratory Work Nr.2
+Laboratory Work Nr.3
 ====================
 Title:
 ------
-Advanced Form Elements. Child Windowses. Basics of Working With Keyboard.
+Basics of Working with Mouse. GDI Primitives. Bezier Curve.
 ------------
 Contents:
 
-•	The Keyboard
+•	Mouse
 
-•	Child Window Controls
+•	Device context
 
-•	Scroll Bar
+•	GDI Primitives
 
-•	Listbox
+•	Line
 
-•	Menus and Other Resources
+•	Curve
 
-•	Dialog Boxes
+•	Plane
 
-Completed mandatory Objectives:
+•	Bitmap image
+
+•	Bezier curve
+
+Completed Mandatory Objectives:
 --------------------
-•Display a dialog box on some event (ex. on clicking some button)
+•	Draw few lines of different colors and weights
 
-•Add a system menu to your application with at least 3 items (add actions to that items)
+•	Draw a Bezier curve
 
-•Add a scroll bar that will change any visible parameter of any other element (color of a text)
+•	Draw few plane objects (ex. circle, square, pie, polygon...) of different colors, weights, filled and not
 
-•Hook keyboard input. Add 2 custom events for 2 different keyboard combinations (ex. change window background on ctrl+space)
+•	Draw 2 different objects using mouse
 
 Objectives With Points:
 ----------------------
-•Add a listbox and attach some events when any element is accessed (clicked) (2 pt)
+•	Draw a custom bitmap image (1 pt)
 
-•Add 2 scroll bars that will manage main window size or position (1 pt)
+•	Add a switch (button, select list...) that will change mouse ability to draw objects (2 pt)
 
-•Customize your application by adding an icon and using different cursor in application (1 pt)
+•	Draw a Bezier curve using mouse (1 pt)
+
+•	Fill an object with a gradient (1 pt)
+
+•	Delete objects using mouse clicking (2 pt)
+
+•	Use mouse as an eraser of an adjustable width (1 pt)
 
 Creation steps of the app:
 --------------------------
-For this laboratory work, I found very useful Charles Petzold's book- *"Programming Windows"*, chapters 6, 9, 10 and 11 from the first section. Reading it helped me in understanding the main features for working with scroll bars, ListBoxes, menus and keyboard. Of course, the precious help of [http://msdn.microsoft.com](http://msdn.microsoft.com) was unreplaceble. Also, some dilemmas were solved by [http://stackoverflow.com](http://http://stackoverflow.com). 
+For this laboratory work, I found very useful Charles Petzold's book- *"Programming Windows"*, chapters 5 and 7 from the first section. Reading it helped me in understanding the main features for working with the mouse. Of course, the precious help of [http://msdn.microsoft.com](http://msdn.microsoft.com) was unreplaceble. Also, some dilemmas were solved by [http://stackoverflow.com](http://http://stackoverflow.com). 
 
 For a better understanding of my app, bellow I'll present its mockup:
 
@@ -46,35 +56,40 @@ For a better understanding of my app, bellow I'll present its mockup:
 
 Features and functionality:
 ---------------------------
-1.	An Edit Box for adding text;
+1.	I’ve started with 3 group boxes that split in branches the tools of my application:
 
-2.	An List Box for output text- at double clicking an item, a message box is displayed.
+	•	Style
 
-3.	Two scroll bars used to change the width and the height of the window;
+	•	Color
 
-4.	One button to add an item to the ListBox;
+	•	Tools
 
-5.	One button to remove an item from the ListBox;
+2.	The “Fill” checkbox is used when you want to fill an object( ex.: ellipse, polygon) with a gradient.
 
-6.	One button to clear all the items from the ListBox; 
+3.	The “Stroke” label gives us the possibility to choose a value that will represent the width of the line or the object you want to draw.
 
-7.	Three scroll bars located in the dialog box responsible for the background color;
+4.	The “Eraser” tool is used for clearing a portion of the drawing area using the mouse. Its dimensions also can be defined by choosing a corresponding value.
 
-8.	Four hotkeys for moving the window on the screen:
+5.	In the next group box, can be seen two labels that allow us to view the color chosen for filling an object and for drawing a line of a particular width.
 
-     •	Ctrl+F1- Move window right
-     
-     •	Ctrl+F2- Move window left
-     
-     •	Ctrl+F3- Move window down
-     
-     •	Ctrl+F4- Move window up;
+6.	Next, you see the RGB set of gradients,  that includes all the possible colors to choose from.
 
-9.	A personalized icon for my application;
+7.	The first tool from the third group box is the “Pen” tool, which can be used for drawing continuous lines, having the stroke 1. We also can define a specific color or change the stroke for those lines.
 
-10.	A personalized cursor for my application;
+8.	The “Line” tool is used for drawing straight lines. This is done by setting the starting point and the ending point.
 
-11.	A system menu with 3 items: File, View, Help;
+9.	The “Ellipse” tool is used for drawing ellipses. This thing is done by left-clicking on the drawing area and then dragging and dropping the cursor.
+
+10.	The “Polygon” tool is used to draw different squares or rectangles, by left-clicking the mouse to establish the first point, drag-and-drop the mouse to define the last point.
+
+11.	The “Bezier” tool is used to draw Bezier curves. You can select the first point by left-clicking the mouse and then drag-and drop it; the second point is selected by right-clicking the mouse and also drag-and-drop it.
+
+All the tools have the possibility of choosing different colors for filling the objects you are going to draw. You can provide different dimensions for the width of the lines and different colors for them.
+
+12.	The drawing area is the place where all the paintings are done. Also here you can delete an object (ellipse or polygon) by right-clicking on it.
+
+13.	For the beauty of the application, I’ve added  a bitmap image on the bottom of the drawing area.
+
 
 Here are some screenshots of the application:
 
@@ -84,23 +99,15 @@ Here are some screenshots of the application:
 
 ![background_dialogbox](https://raw.github.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/Lab2_WP/screenshots/background_dialogbox.png)
  
-**Something about the MENU:** 
-
-• Two dialog boxes: one modal and one modeless;
-
-•	From the File menu, we can exit the program;
-
-•	From the Properties menu, we can open the dialog box consisting of the three scrollbars that manage the background color;
-
-•	From the Help menu, we can open the last dialog box that includes some information about the application.
 
 Conclusion:
 -----------
 
-Doing this laboratory work helped me discover some new features of Windows Programming and apply them into my own program. I’ve learned how to work with different types of dialog boxes and how to create an system menu. For the functionality of my dialog boxes I had to implement two more procedures, create resource files for them and also use the WM_COMMAND message to display them on the screen. Creating the menu was done by using the CreateMenu() and CreatePopupMenu() functions. 
-One of the most difficult things to do in this lab was to work with scroll bars. Because scroll bars don’t  send WM_COMMAND messages to the parent window, I had to create WM_VSCROLL and WM_HSCROLL messages, just like window scroll bars. When processing the scroll bar messages, I could differentiate between window scroll bars and scroll bar controls by the lParam parameter. It is  0 for window scroll bars and the scroll bar window handle for scroll bar controls. I set the range and position of my scroll bar controls with the same calls used for window scroll bars: SetScrollRange(), SetScrollInfo(), SetScrollPos().The only difference is that window scroll bars use a handle to the main window as the first parameter and SB_VERT or SB_HORZ as the second parameter.
+In this laboratory work we had to build an application similar to Paint. Doing it helped me discover some new features of Windows Programming and apply them into my program. 
 
-Also, I’ve added 4 custom events for 4 different keyboard combinations, using the GetKeyState function that determines if the Ctrl button is pressed. I used GetKeyState with the virtual key codes VK_CONTROL and  VK_F1, VK_F2, VK_F3, VK_F4 to move the window.
+I’ve found out how to work with the mouse and I’ve understood how it manipulates graphical data. It was a little bit difficult to deal with all kind of lines especially Bezier curves, but finally I’ve got the main idea.
+
+I’ve also learned about bitmap images and I found them very useful for the beauty of the interface. This application provides a lot of features based on mouse clicks, fact that makes a user feel confident using it because it is pretty similar with standard Windows apps.
 
 
 
