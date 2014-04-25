@@ -1,7 +1,7 @@
 Laboratory Work Nr.1
 ====================
-Title
------
+##Title
+
 Command Line Interface. CLI Editors. Setting Server Environment. Version Control Systems
 
 ##Main purposes of this lab work:
@@ -14,17 +14,17 @@ Command Line Interface. CLI Editors. Setting Server Environment. Version Control
 
 •Ability to work with VCS
 
-####Mandatory Objectives:
+##Mandatory Objectives:
 
-•Connect to a remote server via SSH:
+####•Connect to a remote server via SSH:
 
 This task was done by using GitBash on Windows. The command that helped me to do this was `ssh username@IP` 
 
-•Initialize a repository on server:
+####•Initialize a repository on server:
 
 For starting to track an existing project in Git, I had to go to the project’s directory and type `git init` command in order to create a new subdirectory named .git that contains all of my necessary repository files — a Git repository skeleton.
 
-•Create a file in repository folder, write in your name, save it and commit it:
+####•Create a file in repository folder, write in your name, save it and commit it:
 
 I solved this task doing the following steps:
 ```python
@@ -46,7 +46,7 @@ git add .
 git commit -m "init lab 1 IDE"
 ```
 
-####Objectives With Points:
+##Objectives With Points:
 
 •Connect to server using public key (1 pt)
 
