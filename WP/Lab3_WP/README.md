@@ -52,7 +52,7 @@ For this laboratory work, I found very useful Charles Petzold's book- *"Programm
 
 For a better understanding of my app, bellow I'll present its mockup:
 
- ![mockup](https://raw.github.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/Lab2_WP/screenshots/mockup.png)
+ ![mockup](https://raw.githubusercontent.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/Lab3_WP/screenshots/mockup.png)
 
 Features and functionality:
 ---------------------------
@@ -91,14 +91,10 @@ All the tools have the possibility of choosing different colors for filling the 
 13.	For the beauty of the application, I’ve added  a bitmap image on the bottom of the drawing area.
 
 
-Here are some screenshots of the application:
+Here is the screenshot of the application:
 
-![main](https://raw.github.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/Lab2_WP/screenshots/main.png)
+![main](https://raw.githubusercontent.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/Lab3_WP/screenshots/lab3.png)
 
-![about_dialogbox](https://raw.github.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/Lab2_WP/screenshots/about_dialogbox.png)
-
-![background_dialogbox](https://raw.github.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/Lab2_WP/screenshots/background_dialogbox.png)
- 
 
 Conclusion:
 -----------
