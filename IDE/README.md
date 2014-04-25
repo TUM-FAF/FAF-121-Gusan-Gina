@@ -113,7 +113,12 @@ For rebasing, I had to create a new branch at *commit1*, which allows me to take
 
 ####•Create a VCS hook (1 pt)
 
+
 ####•Make your CLI text editor to highlight code (1 pt)
+
+In order to do this, I had to find out that Vim has a buil-in syntax highlighter and the command that provides it is:
+
+`:syntax on/off`
 
 ####•Create a VCS alias (1 pt)
 
@@ -121,8 +126,38 @@ For rebasing, I had to create a new branch at *commit1*, which allows me to take
 
 ####•Master any CLI editor (ex. VIM). Learn 10 commands' sets (a/A/i/I/o/O is one set) to prove your mastery (1 pt)
 
+`a` Append text following current cursor position
 
+`i` Insert text before the current cursor position
+
+`o` Open up a new line following the current line and add text there
+
+`h` Moves the cursor one character to the left
+
+`l` Moves the cursor one character to the right
+
+`k` Moves the cursor up one line
+
+`j` Moves the cursor down one line
+
+`:n` Cursor goes to the specified (n) line
+
+`:wq` Write file to disk and quit the editor
+
+`:q` Quit 
 
 ####•Create your own server (ex. virtual machine) (2 pt)
 
+For accomplishing this task, I had to install Ubuntu as virtual machine. To create the server I used some commands:
 
+```python
+sudo apt-get install openssh-server      # install OpenSSH`
+sudo service ssh start                   # start server`
+ifconfig                                 # get IP adrress
+```
+
+To close the server, I used `sudo service ssh stop` command.
+
+##Conclusion
+
+This laboratory work practically initialized me in working with Git. It wasn't an easy task, but after I got used to this system of data management, I definitelly can say that using it represents a very big advantage when we speak about team work and big projects. I found very useful the tutorials from [www.github.com](https://www.github.com), but generally speaking you can find the answer for any problem just typing it on [google](https://www.google.com). Now,after finishing all this tasks, I feel more prepared for future laboratories.
