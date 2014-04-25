@@ -151,8 +151,8 @@ In order to do this, I had to find out that Vim has a buil-in syntax highlighter
 For accomplishing this task, I had to install Ubuntu as virtual machine. To create the server I used some commands:
 
 ```python
-sudo apt-get install openssh-server      # install OpenSSH`
-sudo service ssh start                   # start server`
+sudo apt-get install openssh-server      # install OpenSSH
+sudo service ssh start                   # start server
 ifconfig                                 # get IP adrress
 ```
 
