@@ -4,7 +4,7 @@ Title
 -----
 Command Line Interface. CLI Editors. Setting Server Environment. Version Control Systems
 
-####Main purposes of this lab work:
+##Main purposes of this lab work:
 
 •Understanding and using CLI (basic level)
 
