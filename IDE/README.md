@@ -2,83 +2,78 @@ Laboratory Work Nr.1
 ====================
 Title
 -----
-Window. Window handling. Basic window’s form elements.
+Command Line Interface. CLI Editors. Setting Server Environment. Version Control Systems
 Introduction
 ------------
 Main purposes of this lab work:
 
-•understand Event-Driven Programming.
+•Understanding and using CLI (basic level)
 
-•study Win32 API.
+•Administration of a remote linux machine using SSH
 
+•Ability to work remotely (remote code editing)
 
-Secondary purposes of this lab work:
-
-•use a Version Control Systems (GIT).
-
-•write code according to a Programming Style Guide.
+•Ability to work with VCS
 
 Mandatory Objectives:
 --------------------
-•Create a Windows application
+•Connect to a remote server via SSH:
 
-•Choose Programming Style Guidelines that you'll follow
+This task was done by using GitBash on Windows. The command that helped me to do this was `ssh username@IP` 
 
-•Add 2 buttons to window: one with default styles, one with custom styles (size, background, text color, font family, font size)
+•Initialize a repository on server:
 
-•Add 2 text inputs to window: one with default styles, one with custom styles (size, background, text color, font family, font size)
+For starting to track an existing project in Git, I had to go to the project’s directory and type `git init` command in order to create a new subdirectory named .git that contains all of my necessary repository files — a Git repository skeleton.
 
-•Add 2 text elements to window: one with default styles, one with custom styles (size, background, text color, font family, font size)
+•Create a file in repository folder, write in your name, save it and commit it:
+
+I solved this task doing the following steps:
+```python
+#Theese two steps are used for creating a new directory
+mkdir Gusan_Gina_FAF_121
+cd Gusan_Gina_FAF_121
+# Theese steps are used for initialising an empty repository
+mkdir git
+cd git
+git init
+# Here I create the text file using Vim
+vim text.txt 
+#Next, I insert some text in this file and save it
+:i
+Gusan Gina
+:wp
+#Now I add this file and commit it on git
+git add .
+git commit -m "init lab 1 IDE"
+```
 
 Objectives With Points:
 ----------------------
-•Make elements to fit window on resize. (1 pt)
+•Connect to server using public key (1 pt)
 
-•Make elements to interact or change other elements. (2 pt)
+•Create 2 more branches with at least one unique committed file per branch (1 pt)
 
-•Change behavior of different window actions (at least 3). (1 pt)
+•Set a branch to track a remote origin on which you are able to push (ex. github, bitbucket or a custom server) (1 pt)
 
-•Write your own PSG. (1 pt)
+•Reset a branch to previous commit, reset a branch to some specific commit (1 pt)
 
-Creation steps of the app:
---------------------------
-As a beginner in Windows Programming, I found very useful Charles Petzold's book- *"Programming Windows"*.It helped me a lot to get started. Reading it,I figured out the main concepts of an Windows application. During the development of my own app, [http://msdn.microsoft.com](http://msdn.microsoft.com) was also of great usage.
+•Restore a reset branch back to its previous state (1 pt)
 
-Analysing the structure of my program,it can be divided in two main parts:WinMain function,which represents the entry point in the program and WinProc, which is the function that processes all messages sent or posted to all windows of the class. So,in WinMain I've declared the main window,while in WinProc I've created a list of messages as WM_CREATE, WM_PAINT, WM_SYSCOMMAND,WM_SIZE and others.,that I used to generate buttons,edit boxes and dialog boxes. For the objects's interaction one with each other, I used various functions like SendMessage(),CreateFont(),GetClientRect() and others.
+•GIT cherry-pick, rebase (1 pt)
 
-Bellow I'll present the screenshot of the application:
+•Create a VCS hook (1 pt)
 
- ![The app](https://raw.github.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/images/app1.png)
+•Make your CLI text editor to highlight code (1 pt)
 
-Features:
----------
-My application consists of two Edit boxes: one for input text and another for output text.The Input Box has customized text color. The Output Box has customized font size.
+•Create a VCS alias (1 pt)
 
-It also has four Buttons:three of them responsible for fonts and one of them for a special purpose.
-All the buttons have customized styles: text size, text font ,dimensions.
-Functionality:
---------------
-•	By clicking the Default Button, the text goes from Input Box to Output Box, having the default font.
+•Master any CLI editor (ex. VIM). Learn 10 commands' sets (a/A/i/I/o/O is one set) to prove your mastery (1 pt)
 
-•	By clicking the second button, the text goes from Input Box to Output Box, having the ‘Comic Sans’ font.
+•Create your own server (ex. virtual machine) (2 pt)
 
-•	By clicking the third button, the text goes from Input Box to Output box, having the ‘Chaparral’ font.
+Practical Work:
+---------------
 
-•	If you press the minimize or maximize buttons, the window will not minimize nor maximize, instead an alerting message box will appear.
-
-•	If you press the close button, the position of the  window will change and another message box will be displayed.
-
-•	For minimizing the window, in Input box should be typed ‘MINIMIZE'.
-
-•	For maximizing the window, in Input box should be typed ‘MAXIMIZE'.
-
-•	For restoring the window after maximization, in Input box should be typed ‘RESTORE'.
-
-•	For closing the window, in Input box should be typed ‘CLOSE'.
-
-•	The window has a minimal size and also allows resizing.
-
-•	All the objects from the window react at any dimension changes.
 
 
 
