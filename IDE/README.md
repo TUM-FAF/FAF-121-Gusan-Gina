@@ -5,7 +5,7 @@ Title
 Command Line Interface. CLI Editors. Setting Server Environment. Version Control Systems
 Introduction
 ------------
-Main purposes of this lab work:
+##Main purposes of this lab work:
 
 •Understanding and using CLI (basic level)
 
@@ -15,7 +15,7 @@ Main purposes of this lab work:
 
 •Ability to work with VCS
 
-Mandatory Objectives:
+##Mandatory Objectives:
 --------------------
 •Connect to a remote server via SSH:
 
@@ -47,7 +47,7 @@ git add .
 git commit -m "init lab 1 IDE"
 ```
 
-Objectives With Points:
+##Objectives With Points:
 ----------------------
 •Connect to server using public key (1 pt)
 
