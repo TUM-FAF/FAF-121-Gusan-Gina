@@ -117,7 +117,11 @@ For rebasing, I had to create a new branch at *commit1*, which allows me to take
 
 ####•Create a VCS alias (1 pt)
 
+`git config --global alias.vic = "commit -m"`
+
 ####•Master any CLI editor (ex. VIM). Learn 10 commands' sets (a/A/i/I/o/O is one set) to prove your mastery (1 pt)
+
+
 
 ####•Create your own server (ex. virtual machine) (2 pt)
 
