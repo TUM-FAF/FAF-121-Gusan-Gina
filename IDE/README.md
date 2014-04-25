@@ -3,8 +3,7 @@ Laboratory Work Nr.1
 Title
 -----
 Command Line Interface. CLI Editors. Setting Server Environment. Version Control Systems
-Introduction
-------------
+
 ####Main purposes of this lab work:
 
 •Understanding and using CLI (basic level)
@@ -15,8 +14,8 @@ Introduction
 
 •Ability to work with VCS
 
-Mandatory Objectives:
---------------------
+####Mandatory Objectives:
+
 •Connect to a remote server via SSH:
 
 This task was done by using GitBash on Windows. The command that helped me to do this was `ssh username@IP` 
@@ -47,8 +46,8 @@ git add .
 git commit -m "init lab 1 IDE"
 ```
 
-Objectives With Points:
-----------------------
+####Objectives With Points:
+
 •Connect to server using public key (1 pt)
 
 •Create 2 more branches with at least one unique committed file per branch (1 pt)
@@ -70,10 +69,5 @@ Objectives With Points:
 •Master any CLI editor (ex. VIM). Learn 10 commands' sets (a/A/i/I/o/O is one set) to prove your mastery (1 pt)
 
 •Create your own server (ex. virtual machine) (2 pt)
-
-Practical Work:
----------------
-
-
 
 
