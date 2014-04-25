@@ -76,7 +76,7 @@ This task is done using the next commands:
 
 ``` python
 git remote add origin git@github.com:GinaGusan/IDE-Labs.git  # add a remote origin
-git push -u origin master`                                   # push
+git push -u origin master                                    # push
 ```
 
 ####•Reset a branch to previous commit, reset a branch to some specific commit (1 pt)
@@ -88,6 +88,7 @@ To reset the HEAD of the tree to the previous commit I used:
 To reset the HEAD of the tree to some specific commit, I used:
 
 `git reflog`
+
 `git reset --hard ID`
 
 ####•Restore a reset branch back to its previous state (1 pt)
@@ -97,12 +98,17 @@ For restoring, I appied the same procedure. First, I used `git reflog` to see al
 ####•GIT cherry-pick, rebase (1 pt)
 
 For the existing commits, *cherry-pick* applies a change each one introduces, recording a new commit for each.
+
 `git reflog`
+
 `git checkout master`
+
 `git cherry-pick <commit1>`
 
 For rebasing, I had to create a new branch at *commit1*, which allows me to take all the changes that were committed on *commit1* branch and replay them on the *commit2* branch.
+
 `git checkout -b branchx <commit1>`
+
 `git rebase --onto master <commit2>`
 
 ####•Create a VCS hook (1 pt)
