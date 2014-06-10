@@ -27,7 +27,7 @@ For this laboratory work, I used, as usual, information from [http://msdn.micros
 
 Here is the screenshot of the application:
 
-![main](https://raw.githubusercontent.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/Lab3_WP/screenshots/lab3.png)
+![main](https://raw.githubusercontent.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/Lab4_WP/screenshots/lab4.png)
 
 
 Conclusion:
