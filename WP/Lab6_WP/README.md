@@ -11,9 +11,22 @@ Contents:
 Completed Mandatory Objectives:
 --------------------
 •	Create an Win32 or WinRT application using C#
+
 •	Create a ToDo list. Should contain:
+
 		*A list of tasks
+
 		*A way to add new tasks from UI
+
+Objectives with points:
+-----------------------
+•	Create a report (3p)
+
+•	Display a dialog box when a task is completed
+
+•	Add an icon to the application
+
+•	Add a checkbox for managing the displayed tasks
 
 Screenshots of the application:
 --------------------------
@@ -25,7 +38,9 @@ Screenshots of the application:
 ![main](https://raw.githubusercontent.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/Lab3_WP/screenshots/lab3.png)
 
 
-The application also allows the user to decide either to display or not the acomplished tasks:
+
+**The application also allows the user to decide either to display or not the acomplished tasks:**
+
 
 ![main](https://raw.githubusercontent.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/Lab3_WP/screenshots/lab3.png)
 ![main](https://raw.githubusercontent.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/Lab3_WP/screenshots/lab3.png)
