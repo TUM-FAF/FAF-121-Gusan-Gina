@@ -20,14 +20,14 @@ Objectives With Points:
 
 •	Add animated objects which interact with each other (2-6 pt)
 
-Creation steps of the app:
+Basic features:
 --------------------------
 For this laboratory work, I used, as usual, information from [http://msdn.microsoft.com](http://msdn.microsoft.com) and [http://stackoverflow.com](http://http://stackoverflow.com) sites. I proposed myself to create an application that would generate a ball each time I click the mouse. The balls are moving with different velocities in different angles. After interaction, the speed of the two balls gets balanced. Initially, the balls are having different colors. Once the balls clash, their colors change depending on their position in our array. This means that the first one that will get green is the first one from my array and the ball that will keep its initial color until the rest get green, is the last one from my array.
 
 
 Here is the screenshot of the application:
 
-![main](https://raw.githubusercontent.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/Lab3_WP/screenshots/lab3.png)
+![main](https://raw.githubusercontent.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/Lab4_WP/screenshots/lab4.png)
 
 
 Conclusion:
