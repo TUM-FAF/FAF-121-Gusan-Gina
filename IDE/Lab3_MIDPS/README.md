@@ -33,7 +33,7 @@ For this laboratory work, I have decided to work with Android applications. I've
 
 The screenshot of the application:
 
-![main](https://raw.githubusercontent.com/TUM-FAF/FAF-121-Gusan-Gina/master/WP/Lab3_WP/screenshots/lab3.png)
+![main](https://raw.githubusercontent.com/TUM-FAF/FAF-121-Gusan-Gina/master/IDE/Lab3_MIDPS/screenshots/Calculator.PNG)
 
 
 Conclusion:
