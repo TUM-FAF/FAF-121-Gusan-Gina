@@ -1,0 +1,9 @@
+C:\Users\Gina\Desktop\Lab#2\Simulatron_IDE\bin\Debug\Simulatron_IDE.exe.config
+C:\Users\Gina\Desktop\Lab#2\Simulatron_IDE\bin\Debug\Simulatron_IDE.exe
+C:\Users\Gina\Desktop\Lab#2\Simulatron_IDE\bin\Debug\Simulatron_IDE.pdb
+C:\Users\Gina\Desktop\Lab#2\Simulatron_IDE\obj\Debug\Simulatron_IDE.csprojResolveAssemblyReference.cache
+C:\Users\Gina\Desktop\Lab#2\Simulatron_IDE\obj\Debug\Simulatron_IDE.Form1.resources
+C:\Users\Gina\Desktop\Lab#2\Simulatron_IDE\obj\Debug\Simulatron_IDE.Properties.Resources.resources
+C:\Users\Gina\Desktop\Lab#2\Simulatron_IDE\obj\Debug\Simulatron_IDE.csproj.GenerateResource.Cache
+C:\Users\Gina\Desktop\Lab#2\Simulatron_IDE\obj\Debug\Simulatron_IDE.exe
+C:\Users\Gina\Desktop\Lab#2\Simulatron_IDE\obj\Debug\Simulatron_IDE.pdb
