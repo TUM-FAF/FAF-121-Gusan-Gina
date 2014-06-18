@@ -22,20 +22,28 @@
 
 #### Features:
        
-      For this laboratory work, I used **Visual Studio** IDE. I have created a _WindowsFormsApplication_ consisting of:
-          - A Picture Box, used for displaying images (in our case - the enemies)
-          - A Stopwatch, used for counting the remaining time 
-          - Three button controls
-          - Two informal labels used for counting the number of detected and destroyed enemies
-          - Another informal label, that displays the status of our control panel (found enemies or not)
+    For this laboratory work, I used **Visual Studio** IDE. I have created a _WindowsFormsApplication_ consisting of:
+    - A Picture Box, used for displaying images (in our case - the enemies)
+    - A Stopwatch, used for counting the remaining time 
+    - Three button controls
+    - Two informal labels used for counting the number of detected and destroyed enemies
+    - Another informal label, that displays the status of our control panel (found enemies or not)
 
-      Also, I have utilized a synthesizer and dialog boxes in my program in order to share messages with potential users, depending on the possible simulations.
+    Also, I have utilized a synthesizer and dialog boxes in my program in order to share messages with potential users, depending on the possible simulations.
 
 
 #### The screenshots of the application:
 
 
-       ![main]()
+   ![main](https://raw.githubusercontent.com/TUM-FAF/FAF-121-Gusan-Gina/master/IDE/Lab2_MIDPS/screenshots/simulatron1.png)
+
+   ![main](https://raw.githubusercontent.com/TUM-FAF/FAF-121-Gusan-Gina/master/IDE/Lab2_MIDPS/screenshots/simulatron2.png)
+
+   ![main](https://raw.githubusercontent.com/TUM-FAF/FAF-121-Gusan-Gina/master/IDE/Lab2_MIDPS/screenshots/simulatron3.png)
+
+   ![main](https://raw.githubusercontent.com/TUM-FAF/FAF-121-Gusan-Gina/master/IDE/Lab2_MIDPS/screenshots/simulatron4.png)
+
+   ![main](https://raw.githubusercontent.com/TUM-FAF/FAF-121-Gusan-Gina/master/IDE/Lab2_MIDPS/screenshots/simulatron5.png)
 
       
       
