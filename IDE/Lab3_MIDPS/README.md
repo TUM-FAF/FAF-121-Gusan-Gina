@@ -39,7 +39,7 @@ The screenshot of the application:
 Conclusion:
 -----------
 
-This laboratory work helped me remeber some features of Android apps and learn some new ones. It is not the first time when I work with Eclipse, so I have managed to finish my program in a resonable time. I didn't create my design by drag-and-drop-ing because I wanted to try and work with relative layouts.
+This laboratory work helped me remember some features of Android apps and learn some new ones. It is not the first time when I work with Eclipse, so I have managed to finish my program in a reasonable time. I didn't create my design by drag-and-drop-ing because I wanted to try and work with relative layouts.
 
 
 
