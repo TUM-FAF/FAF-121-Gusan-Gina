@@ -5,7 +5,9 @@
 ### Prerequisites:
 
   -IDEs: (one of) Sublime Text 3, RubyMine, PyCharm, Komodo, Coda, phpStorm, webStorm, Brackets
+  
   -Languages: Ruby, Python, JS
+  
   -Technologies and Frameworks: Ruby on Rails, Django, Node.js && Express
 
 #### Completed Mandatory Objectives:
