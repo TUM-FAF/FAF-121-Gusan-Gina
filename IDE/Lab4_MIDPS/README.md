@@ -1,6 +1,7 @@
 # Laboratory Work Nr.4
 
-### Title: Web development IDEs/text editors:
+### Title: Web development IDEs/text editors
+
 
 ### Prerequisites:
 
@@ -9,6 +10,7 @@
   -Languages: Ruby, Python, JS
   
   -Technologies and Frameworks: Ruby on Rails, Django, Node.js && Express
+  
 
 #### Completed Mandatory Objectives:
 
