@@ -4,7 +4,9 @@
 
 In order to build Ariane 5, known as a giant rocket capable of releasing a pair of three-ton satellites into orbit with each launch, it took the European Space Agency 10 years and huge resources (over 7 billion $). This aspiring project was intended to give Europe overwhelming supremacy in the commercial space business. 
 
- At 39 seconds after launch on 4 June 1996, in Kourou, French Guiana, as the rocket reached an altitude of 3700 m, a self-destruct mechanism finished off Ariane 5 in a massive explosion, along with its payload of four expensive and uninsured scientific satellites. All it took to explode that rocket in less than a minute after its maiden fight, was a small computer script trying to cram a 64-bit number into a 16-bit space.
+At 39 seconds after launch on 4 June 1996, in Kourou, French Guiana, as the rocket reached an altitude of 3700 m, a self-destruct mechanism finished off Ariane 5 in a massive explosion, along with its payload of four expensive and uninsured scientific satellites. All it took to explode that rocket in less than a minute after its maiden fight, was a small computer script trying to cram a 64-bit number into a 16-bit space.
+
+![main](https://...Ariane5_structure.png)
 
 The conversion error occurred in a routine which had been reused from the Ariane 4 vehicle. During design of the software of the inertial reference system used for Ariane 4 and Ariane 5, a decision was taken that it was not necessary to protect the inertial system computer from being made inoperative by an excessive value of the variable related to the horizontal velocity, a protection which was provided for several other variables of the alignment software. When taking this design decision, it was not analyzed or fully understood which values this particular variable might assume when the alignment software was allowed to operate after lift-off.
 
