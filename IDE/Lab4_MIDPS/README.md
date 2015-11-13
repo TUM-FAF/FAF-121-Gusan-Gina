@@ -6,7 +6,7 @@ In order to build Ariane 5, known as a giant rocket capable of releasing a pair 
 
 At 39 seconds after launch on 4 June 1996, in Kourou, French Guiana, as the rocket reached an altitude of 3700 m, a self-destruct mechanism finished off Ariane 5 in a massive explosion, along with its payload of four expensive and uninsured scientific satellites. All it took to explode that rocket in less than a minute after its maiden fight, was a small computer script trying to cram a 64-bit number into a 16-bit space.
 
-![main](https://...Ariane5_structure.png)
+![Ariane5_structure](https://...Ariane5_structure.png)
 
 The conversion error occurred in a routine which had been reused from the Ariane 4 vehicle. During design of the software of the inertial reference system used for Ariane 4 and Ariane 5, a decision was taken that it was not necessary to protect the inertial system computer from being made inoperative by an excessive value of the variable related to the horizontal velocity, a protection which was provided for several other variables of the alignment software. When taking this design decision, it was not analyzed or fully understood which values this particular variable might assume when the alignment software was allowed to operate after lift-off.
 
@@ -47,6 +47,8 @@ Here, another question arises: What was the reason to decide to run a function f
 
 So, back to the main idea, this is the sequence of facts that leaded to the disaster: the steering was controlled by the on-board computer, which mistakenly thought the rocket needed a course change because of numbers coming from the inertial reference system. The numbers looked like flight data, bizarre and impossible flight data, but were actually a diagnostic error message. The guidance system had in fact shut down.
 
+![flight_sequence](https://...flight_sequence.png)
+
 This shutdown occurred 36.7 seconds after launch, when the guidance system's own computer tried to convert one piece of data, the sideways velocity of the rocket, from a 64-bit format to a 16-bit format. The number was too big, and an overflow error resulted. There was no explicit exception handler to catch the exception, so it followed the usual fate of uncaught exceptions. When the guidance system shut down, it passed control to an identical, redundant unit, which was there to provide backup in case of just such a failure. But the second unit had failed in the identical manner a few milliseconds before. And why not? It was running, of course, the same software.
 
 Enough words for now, let’s take a look at the Ariane 5 launching itself:
@@ -57,7 +59,11 @@ A few more things about the bug that brought so much attention to the community:
 
 The self-destruction of the launcher occurred near to the launch pad, at an altitude of approximately 3700 m. Therefore, all the launcher remains fell back onto the ground, scattered over an area of approximately 12 km2 east of the launch pad. Recovery of material proved difficult, however, since this area is nearly all mangrove swamp or savanna.
 
+![Ariane5_remains](https://...Ariane5_remains.gif)
+
 Nevertheless, it was possible to retrieve from the remains the two Inertial Reference Systems. Of particular interest was the one which had worked in active mode and stopped functioning last, and for which, therefore, certain information was not available in the telemetry data (provision for transmission to ground of this information was limited to whichever of the two units might fail first). The results of the examination of this unit were very helpful to the analysis of the failure sequence.
+
+![support_strat_satellite](https://...support_strat_satellite.jpg)
 
 One item that was fully qualified after the very unfortunate explosion of the launcher was the safety system, as well as its forecasts and computing models (remains impact zone, cloud dispersion model, absence of air toxicity beyond the safety limits). No gaseous pollution at ground level was detected by any of the measuring instruments outside the launch area. The cloud produced by the explosion and the plume of exhaust gases immediately moved parallel to the coast, and were monitored by helicopters until three hours after the accident, by which time they were several kilometers off the coast and dissipating gradually.
 
@@ -67,7 +73,7 @@ What about an implementation error? Although somebody may criticize the removal 
 
 Then what was the source of the problem? Most probably, it was a reuse error. The SRI (Inertial Reference System) horizontal bias module was reused from a 10-year-old software, the software from Ariane 4. But this is not the full story, the truly unacceptable part was the absence of any kind of precise specification associated with a reusable module. The requirement that the horizontal bias should fit on 16 bits was in fact stated in an obscure part of a document. But in the code itself it was nowhere to be found! From the principle of Design by Contract, we know that in order to construct reliable software, any participant element that has such a fundamental constraint should state it explicitly, as part of a mechanism present in the programming language. Does this mean that the crash would automatically have been avoided if the mission used a language and method supporting built-in assertions and Design by Contract? Although it is always risky to draw such after-the-fact conclusions, the answer is probably yes.
 
-
+![Ariane4-5_difference](https://...Ariane4-5_difference.png)
 
 The Europeans hoped to launch a new Ariane 5 next spring, this time with a newly designated "software architect" who will oversee a process of more intensive and realistic ground simulation. Simulation is the great hope of software debuggers everywhere, though it can never anticipate every feature of real life. "Very tiny details can have terrible consequences," said Jacques Durand, head of the project, in Paris. "That's not surprising, especially in a complex software system such as this is."
 
