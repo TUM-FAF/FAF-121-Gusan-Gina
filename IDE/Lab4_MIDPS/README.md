@@ -10,7 +10,7 @@ The conversion error occurred in a routine which had been reused from the Ariane
 
 Below is presented the Ada program of the inertial reference system:
 
-`
+```
 ...
 declare
   vertical_veloc_sensor: float;
@@ -32,7 +32,7 @@ begin
     when others => use_irs1();
   end;
 end irs2;
-`
+```
 
 Although one may criticize the Ada exception mechanism, it could have been used here to catch the exception. In fact, quoting the report:
 “Not all the conversions were protected because a maximum workload target of 80% had been set for the SRI computer. To determine the vulnerability of unprotected code, an analysis was performed on every operation which could give rise to an ... operand error. This led to protection being added to four of seven variables... in the Ada code.” However, three of the variables were left unprotected. In other words, the potential problem of failed arithmetic conversions was recognized. Unfortunately, the fatal exception was among the three that were not monitored, not the four that were.
