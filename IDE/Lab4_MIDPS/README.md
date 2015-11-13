@@ -49,7 +49,7 @@ This shutdown occurred 36.7 seconds after launch, when the guidance system's own
 
 Enough words for now, let’s take a look at the Ariane 5 launching itself:
 
-[![IMAGE ALT TEXT HERE](https://www.youtube.com/watch?v=gp_D8r-2hwk/0.jpg)](https://www.youtube.com/watch?v=gp_D8r-2hwk)
+[![ARIANE 5 LAUNCH FAILURE HERE](https://www.youtube.com/watch?v=gp_D8r-2hwk/0.jpg)](https://www.youtube.com/watch?v=gp_D8r-2hwk)
 
 A few more things about the bug that brought so much attention to the community: it belongs to a species that has existed since the first computer programmers realized they could store numbers as sequences of bits, atoms of data, ones and zeroes: 1011010100010001101001…. A bug like this might crash a spreadsheet or word processor on a bad day, but instead it crushed one of the most expensive rockets built on that period. Ironic, isn’t it?
 
